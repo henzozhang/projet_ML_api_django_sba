@@ -1,0 +1,20 @@
+{% url 'home' as url_home %} {% url 'api' as url_api %}
+
+<div class ='container'>
+    <header class="d-flex justify-content-center py-3">
+          <ul class="nav nav-pills">
+            {% if request.path == url_home %}
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active" aria-current="page">Home</a></li>
+            {% else %}
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+            {% endif %}
+
+            {% if request.path == url_api %}
+            <li class="nav-item"><a href="{% url 'api' %}" class="nav-link active" aria-current="page">Validation Procedure</a></li>
+            {% else %}
+            <li class="nav-item"><a href="{% url 'api' %}" class="nav-link">Validation Procedure</a></li>
+            {% endif %}
+           
+          </ul>
+      </header>
+  </div>
