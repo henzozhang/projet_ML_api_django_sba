@@ -8,9 +8,20 @@ def home_view(request):
 
 
 class PredictionForm(forms.Form):
-    age = forms.IntegerField()
-    sex = forms.CharField()
-    city = forms.CharField()
+    state = forms.CharField()
+    bankstate =forms.CharField()
+    naics =  forms.CharField()
+    term = forms.CharField()
+    noemp = forms.CharField()
+    newexist = forms.CharField()
+    createjob = forms.CharField()
+    retainedjob = forms.CharField()
+    franchisecode = forms.CharField()
+    urbanrural = forms.CharField()
+    revlinecr = forms.CharField()
+    lowdoc = forms.CharField()
+    grappv = forms.CharField()
+    
 
 def api_prediction(request):
     if request.method == 'POST':
