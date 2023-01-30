@@ -21,8 +21,8 @@ def consumer(request):
             print(data)
             
             reponse = requests.post('http://127.0.0.1:8000/predict', data=data)
-            info = reponse.text
-            if info == '{"mis_status":true}':
+            info = reponse.json()["mis_status"]
+            if info == 'true':
                 info = "Crédit Approuvé"
             else:
                 info = "Crédit Refusé"
