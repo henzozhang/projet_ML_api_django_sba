@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container-fluid">
@@ -7,9 +8,11 @@
       <div class="col-md-5 p-lg-5 mx-auto my-5">
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy  }}
             <input type="submit" value="Submit">
         </form>
+
+        <p>{{info}}</p>
     
       </div>
     </div>
@@ -18,19 +21,4 @@
 </div>
 
 
-  
-
-{% comment %} <body class="text-center">
-    
-<main class="form-signin w-100 m-auto">   
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
-    </form>
-
-    resultat: {{ prediction }}
-</main>
-  
-</body> {% endcomment %}
 {% endblock content %}
