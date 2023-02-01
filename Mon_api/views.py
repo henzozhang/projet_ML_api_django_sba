@@ -17,6 +17,7 @@ def consumer(request):
     if request.method == 'POST':
         form = ApiForm(request.POST)
         if form.is_valid():
+            
             data = json.dumps(form.cleaned_data)
             print(data)
             
