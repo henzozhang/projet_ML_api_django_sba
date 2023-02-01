@@ -20,7 +20,8 @@ def consumer(request):
             data = json.dumps(form.cleaned_data)
             print(data)
             
-            reponse = requests.post('http://127.0.0.1:8000/predict', data=data)
+            # reponse = requests.post('http://127.0.0.1:8000/predict', data=data)
+            reponse = requests.post('https://bsa-api-model.onrender.com/predict', data=data)
             info = reponse.json()["mis_status"]
             if info == 'true':
                 info = "Crédit Approuvé"
